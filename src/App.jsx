@@ -7,11 +7,9 @@ import Faq from "./components/Faq";
 import Footer from "./components/Footer";
 
 const TUFLandingPage = () => {
-  const [darkMode, setDarkMode] = React.useState(true);
-
   return (
-    <div className={`min-h-screen ${darkMode ? "dark" : ""}`}>
-      <Header darkMode={darkMode} setDarkMode={setDarkMode} />
+    <div className="min-h-screen">
+      <Header />
       <HeroSection />
       <CoursesSection />
       <PricingPlans />

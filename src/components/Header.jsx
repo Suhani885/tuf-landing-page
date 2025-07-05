@@ -86,6 +86,10 @@ const Header = () => {
             </a>
 
             <a
+              onClick={() => {
+                const pricingSection = document.getElementById("pricing");
+                pricingSection?.scrollIntoView({ behavior: "smooth" });
+              }}
               href="#"
               className="relative py-3 px-4 text-gray-300 hover:text-white transition-all duration-300 group text-lg font-medium"
             >
@@ -184,6 +188,10 @@ const Header = () => {
             </a>
             <a
               href="#"
+              onClick={() => {
+                const pricingSection = document.getElementById("pricing");
+                pricingSection?.scrollIntoView({ behavior: "smooth" });
+              }}
               className="block py-3 px-4 text-gray-300 hover:text-white transition-all duration-300 rounded-xl hover:bg-gray-800/50 text-lg font-medium"
             >
               Pricing

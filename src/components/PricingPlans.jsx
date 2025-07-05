@@ -2,9 +2,9 @@ import { Check, X } from "lucide-react";
 
 const PricingPlans = () => {
   return (
-    <div className="min-h-screen bg-gray-900 p-6">
+    <div className="min-h-screen bg-gray-900 p-6" id="pricing">
       <div className="max-w-6xl mx-auto">
-        <div className="text-center mb-12">
+        <div className="text-center mb-12 mt-5">
           <h1 className="text-4xl font-bold mb-3 bg-gradient-to-r from-white via-purple-200 to-white bg-clip-text text-transparent">
             Affordable Plans for Every Learner
           </h1>
