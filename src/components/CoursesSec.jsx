@@ -12,7 +12,7 @@ const CourseCard = ({
 }) => {
   return (
     <div className="group relative transform transition-all duration-700 hover:scale-105">
-      <div className="absolute -inset-1 bg-gradient-to-br from-orange-500/30 via-purple-500/30 to-cyan-500/30 rounded-3xl blur-2xl opacity-0 group-hover:opacity-100 transition-all duration-700"></div>
+      <div className="absolute -inset-1 bg-gradient-to-br from-orange-500/10 to-orange-600/10 rounded-3xl blur-xl opacity-0 group-hover:opacity-100 transition-all duration-700"></div>
 
       <div className="relative h-full bg-gradient-to-br from-white/[0.12] via-white/[0.08] to-white/[0.04] backdrop-blur-xl rounded-2xl border border-white/[0.15] hover:border-white/[0.3] transition-all duration-700 overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-br from-white/[0.05] via-transparent to-white/[0.02] opacity-0 group-hover:opacity-100 transition-all duration-700"></div>
@@ -73,7 +73,7 @@ const CourseCard = ({
 const PremiumCard = ({ title, description, problems, icon, gradient }) => {
   return (
     <div className="group relative transform transition-all duration-700 hover:scale-105">
-      <div className="absolute -inset-1 bg-gradient-to-br from-orange-400/40 via-red-500/40 to-orange-600/40 rounded-3xl blur-2xl opacity-0 group-hover:opacity-100 transition-all duration-700"></div>
+      <div className="absolute -inset-1 bg-gradient-to-br from-orange-400/15 to-orange-600/15 rounded-3xl blur-xl opacity-0 group-hover:opacity-100 transition-all duration-700"></div>
 
       <div className="relative h-full bg-gradient-to-br from-white/[0.15] via-white/[0.12] to-white/[0.08] backdrop-blur-xl rounded-2xl border border-orange-400/[0.3] hover:border-orange-400/[0.5] transition-all duration-700 overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-br from-orange-500/[0.08] via-transparent to-red-500/[0.08] opacity-0 group-hover:opacity-100 transition-all duration-700"></div>
