@@ -13,7 +13,6 @@ import {
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isResourcesOpen, setIsResourcesOpen] = useState(false);
-  const [isScrolled, setIsScrolled] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -51,18 +50,12 @@ const Header = () => {
   ];
 
   return (
-    <header
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
-        isScrolled
-          ? "bg-gray-900/95 backdrop-blur-xl shadow-2xl border-b border-gray-700/50"
-          : "bg-gray-900/90 backdrop-blur-md"
-      }`}
-    >
-      <div className="max-w-7xl mx-auto px-6">
-        <div className="flex items-center justify-between h-20">
-          <div className="flex items-center space-x-4 group cursor-pointer">
+    <header className="fixed top-4 left-1/2 transform -translate-x-1/2 z-50 w-[95%] max-w-6xl">
+      <div className="bg-gray-800/80 backdrop-blur-xl rounded-3xl border border-gray-700/50 shadow-2xl px-8 py-2">
+        <div className="flex items-center justify-between">
+          <div className="flex items-center space-x-3 group cursor-pointer">
             <div className="relative">
-              <div className="relative w-20 h-20 rounded-xl flex items-center justify-center transition-all duration-500 group-hover:scale-110">
+              <div className="relative w-12 h-12 rounded-xl flex items-center justify-center transition-all duration-500 group-hover:scale-110">
                 <img
                   src="https://takeuforward.org/static/media/TufPlusLight.041fc694d612b3fbaaa0.png"
                   alt="TUF Logo"
@@ -75,14 +68,13 @@ const Header = () => {
             </div>
           </div>
 
-          <nav className="hidden lg:flex items-center space-x-12">
+          <nav className="hidden lg:flex items-center space-x-8">
             <a
               href="#"
-              className="relative py-3 px-4 text-gray-300 hover:text-white transition-all duration-300 group text-lg font-medium"
+              className="relative py-2 px-4 text-gray-300 hover:text-white transition-all duration-300 group text-base font-medium"
             >
               Home
-              <span className="absolute bottom-0 left-0 w-0 h-1 bg-gradient-to-r from-orange-500 to-orange-600 group-hover:w-full transition-all duration-500 rounded-full"></span>
-              <span className="absolute inset-0 bg-orange-500/5 rounded-lg opacity-0 group-hover:opacity-100 transition-all duration-300"></span>
+              <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-orange-500 to-orange-600 group-hover:w-full transition-all duration-500 rounded-full"></span>
             </a>
 
             <a
@@ -91,30 +83,28 @@ const Header = () => {
                 pricingSection?.scrollIntoView({ behavior: "smooth" });
               }}
               href="#"
-              className="relative py-3 px-4 text-gray-300 hover:text-white transition-all duration-300 group text-lg font-medium"
+              className="relative py-2 px-4 text-gray-300 hover:text-white transition-all duration-300 group text-base font-medium"
             >
               Pricing
-              <span className="absolute bottom-0 left-0 w-0 h-1 bg-gradient-to-r from-orange-500 to-orange-600 group-hover:w-full transition-all duration-500 rounded-full"></span>
-              <span className="absolute inset-0 bg-orange-500/5 rounded-lg opacity-0 group-hover:opacity-100 transition-all duration-300"></span>
+              <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-orange-500 to-orange-600 group-hover:w-full transition-all duration-500 rounded-full"></span>
             </a>
 
             <div className="relative">
               <button
                 onClick={() => setIsResourcesOpen(!isResourcesOpen)}
-                className="flex items-center space-x-2 py-3 px-4 text-gray-300 hover:text-white transition-all duration-300 group text-lg font-medium"
+                className="flex items-center space-x-2 py-2 px-4 text-gray-300 hover:text-white transition-all duration-300 group text-base font-medium"
               >
                 <span>Resources</span>
                 <ChevronDown
-                  size={18}
+                  size={16}
                   className={`transform transition-all duration-300 ${
                     isResourcesOpen ? "rotate-180 text-orange-400" : ""
                   } group-hover:text-orange-400`}
                 />
-                <span className="absolute inset-0 bg-orange-500/5 rounded-lg opacity-0 group-hover:opacity-100 transition-all duration-300"></span>
               </button>
 
               {isResourcesOpen && (
-                <div className="absolute top-full left-0 mt-4 w-96 bg-gray-800/95 backdrop-blur-xl rounded-3xl shadow-2xl border border-gray-700/50 overflow-hidden opacity-100 transform translate-y-0 transition-all duration-500 animate-in slide-in-from-top-2">
+                <div className="absolute top-full left-0 mt-4 w-96 bg-gray-800/95 backdrop-blur-xl rounded-3xl shadow-2xl border border-gray-700/50 overflow-hidden opacity-100 transform translate-y-0 transition-all duration-500">
                   <div className="p-3">
                     {resourcesDropdown.map((item, index) => (
                       <div
@@ -163,26 +153,26 @@ const Header = () => {
           </nav>
 
           <div className="flex items-center space-x-4">
-            <button className="hidden md:flex text-white items-center space-x-2 bg-gradient-to-r from-orange-500 to-orange-600 px-6 py-2 rounded-xl font-semibold text-lg transition-all duration-300 transform hover:scale-105 shadow-lg relative overflow-hidden group">
-              <span className="relative z-10">Login</span>
+            <button className="hidden md:flex text-white items-center space-x-2 bg-gradient-to-r from-orange-500 to-orange-600 px-6 py-2 rounded-xl font-semibold text-base transition-all duration-300 transform hover:scale-105 shadow-lg relative overflow-hidden group">
+              <span className="relative z-10">Sign in</span>
             </button>
 
             <button
               onClick={() => setIsMenuOpen(!isMenuOpen)}
-              className="lg:hidden flex items-center justify-center w-12 h-12 rounded-xl bg-gray-800 hover:bg-gray-700 transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-gray-700/50"
+              className="lg:hidden flex items-center justify-center w-10 h-10 rounded-xl bg-gray-700/50 hover:bg-gray-700 transition-all duration-300 transform hover:scale-105"
             >
-              {isMenuOpen ? <X size={22} /> : <Menu size={22} />}
+              {isMenuOpen ? <X size={20} /> : <Menu size={20} />}
             </button>
           </div>
         </div>
       </div>
 
       {isMenuOpen && (
-        <div className="lg:hidden bg-gray-900/95 backdrop-blur-xl border-t border-gray-700/50 animate-in slide-in-from-top-2 duration-300">
+        <div className="lg:hidden bg-gray-800/95 backdrop-blur-xl border border-gray-700/50 rounded-3xl mt-4 duration-300">
           <div className="px-6 py-6 space-y-4">
             <a
               href="#"
-              className="block py-3 px-4 text-gray-300 hover:text-white transition-all duration-300 rounded-xl hover:bg-gray-800/50 text-lg font-medium"
+              className="block py-3 px-4 text-gray-300 hover:text-white transition-all duration-300 rounded-xl hover:bg-gray-700/50 text-base font-medium"
             >
               Home
             </a>
@@ -192,18 +182,18 @@ const Header = () => {
                 const pricingSection = document.getElementById("pricing");
                 pricingSection?.scrollIntoView({ behavior: "smooth" });
               }}
-              className="block py-3 px-4 text-gray-300 hover:text-white transition-all duration-300 rounded-xl hover:bg-gray-800/50 text-lg font-medium"
+              className="block py-3 px-4 text-gray-300 hover:text-white transition-all duration-300 rounded-xl hover:bg-gray-700/50 text-base font-medium"
             >
               Pricing
             </a>
             <a
               href="#"
-              className="block py-3 px-4 text-gray-300 hover:text-white transition-all duration-300 rounded-xl hover:bg-gray-800/50 text-lg font-medium"
+              className="block py-3 px-4 text-gray-300 hover:text-white transition-all duration-300 rounded-xl hover:bg-gray-700/50 text-base font-medium"
             >
               Resources
             </a>
-            <button className="flex items-center justify-center space-x-2 w-full bg-gradient-to-r from-orange-500 to-orange-600 hover:from-orange-600 hover:to-orange-700 px-8 py-4 rounded-xl font-semibold text-lg transition-all duration-300 mt-6 transform hover:scale-105 shadow-lg hover:shadow-orange-500/40 group">
-              <span>Login</span>
+            <button className="flex items-center justify-center space-x-2 w-full bg-gradient-to-r from-orange-500 to-orange-600 hover:from-orange-600 hover:to-orange-700 px-8 py-4 rounded-xl font-semibold text-base transition-all duration-300 mt-6 transform hover:scale-105 shadow-lg hover:shadow-orange-500/40 group">
+              <span>Sign in</span>
               <ArrowRight
                 size={18}
                 className="group-hover:translate-x-1 transition-transform duration-300"
