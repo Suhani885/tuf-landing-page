@@ -79,8 +79,12 @@ const Header = () => {
 
             <a
               onClick={() => {
-                const pricingSection = document.getElementById("pricing");
-                pricingSection?.scrollIntoView({ behavior: "smooth" });
+                setTimeout(() => {
+                  const pricingSection = document.getElementById("pricing");
+                  if (pricingSection) {
+                    pricingSection.scrollIntoView({ behavior: "smooth" });
+                  }
+                }, 100);
               }}
               href="#"
               className="relative py-2 px-4 text-gray-300 hover:text-white transition-all duration-300 group text-base font-medium"

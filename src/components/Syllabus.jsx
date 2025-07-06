@@ -178,7 +178,7 @@ const SyllabusFeatures = () => {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 ">
             {features.map((feature, index) => (
               <div
                 key={index}
@@ -192,7 +192,7 @@ const SyllabusFeatures = () => {
                   <h3 className="text-lg font-semibold text-white mb-3 group-hover:text-white ">
                     {feature.title}
                   </h3>
-                  <p className="text-zinc-400 text-sm leading-relaxed hover:text-white">
+                  <p className="text-zinc-400 text-sm leading-relaxed group-hover:text-white">
                     {feature.description}
                   </p>
                 </div>
